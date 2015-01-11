@@ -1,0 +1,8 @@
+{
+  "name": "snooze-socket-demo",
+  "version": "0.0.0",
+  "dependencies": {
+    "snooze": "^1.0.0-alpha.4",
+    "snooze-socket": "^1.0.0"
+  }
+}

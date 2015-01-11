@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" ng-app="chatApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Snooze-Socket Socket.IO Chat Example</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css"/>
+  <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="message-container" ng-controller="MessagesCtrl">
+      
+      <div class="message" ng-repeat="message in messages">
+        <span class="name">{{message.name}}</span>
+        <span class="msg">{{message.message}}</span>
+      </div>
+
+    </div>
+    <div id="details-container">
+      
+      <div id="users-container">
+
+        <div id="users-container-title">
+          Users Online
+        </div> 
+
+        <div id="users-container-users" ng-controller="UsersCtrl">
+          <div class="user" ng-repeat="user in users">
+            {{user.name}}
+          </div>
+        </div>
+
+      </div>
+
+      <div id="construction-container">
+        <form class="form" ng-controller="NewMessageCtrl" ng-submit="submit()">
+          <div class="form-group">
+            <label>Message (min length: {{minLength}} chars.)</label>
+            <textarea class="form-control" placeholder="Message" ng-model="newMessage.message"></textarea>
+          </div>
+          <div class="form-group">
+            <span>( {{newMessage.message.length}} / {{minLength}} )</span>
+            <button class='btn btn-primary pull-right' ng-disabled="newMessage.message.length <= minLength">Send</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+  <script src="http://localhost:9876/socket.io/socket.io.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
