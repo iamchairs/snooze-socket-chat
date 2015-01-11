@@ -6,6 +6,7 @@ A chat room example using snooze-socket.
 ## Install and Run
 
 Start the server
+
 	git clone https://github.com/iamchairs/snooze-socket-chat
 	cd snooze-socket-chat
 	npm install
